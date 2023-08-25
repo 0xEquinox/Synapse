@@ -37,6 +37,7 @@ class _GradeViewPageState extends State<GradeViewPage> {
         title: Text(widget.title),
         backgroundColor: Colors.green,
         titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
+          iconTheme: const IconThemeData(color: Colors.white)
       ),
       body: Center(
         child: ListView(

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:xml_annotation/xml_annotation.dart' as annotation;
 import 'package:xml/xml.dart';
 
@@ -838,6 +839,14 @@ class Assignment {
   String? dropStartDate;
   @annotation.XmlAttribute(name: 'DropEndDate')
   String? dropEndDate;
+
+  bool isBeingEdited = false;
+  double pointsEarned = 0;
+  double pointsPossible = 0;
+  TextEditingController pointsEarnedController = TextEditingController();
+  TextEditingController pointsPossibleController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+
 
   Assignment({
     this.gradeBookID,

@@ -50,6 +50,7 @@ class LoginPageState extends State<LoginPage> {
                       controller: usernameController,
                     ),
                     TextFormField(
+                      obscureText: true,
                       decoration: const InputDecoration(
                         hintText: 'Password',
 
