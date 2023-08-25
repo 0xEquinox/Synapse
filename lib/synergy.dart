@@ -8,11 +8,19 @@ import 'dart:io';
 class Synergy {
   static GradeBook populateScores(GradeBook gradebook) {
     for (int i = 0; i < (gradebook.courses?.courses?.length ?? 0); i++) {
-      for (int j = 0; j < (gradebook.courses?.courses?[i].marks?.marks?[0].assignments?.assignments?.length ?? 0); j++) {
-        Assignment? current = gradebook.courses?.courses?[i].marks?.marks?[0].assignments?.assignments?[j];
+      for (int j = 0;
+          j <
+              (gradebook.courses?.courses?[i].marks?.marks?[0].assignments
+                      ?.assignments?.length ??
+                  0);
+          j++) {
+        Assignment? current = gradebook
+            .courses?.courses?[i].marks?.marks?[0].assignments?.assignments?[j];
         if (current?.points?.contains(" / ") ?? true) {
-          current?.pointsPossible = double.parse(current.points?.split(" / ")[1].trim() ?? '0.00');
-          current?.pointsEarned = double.parse(current.points?.split(" / ")[0].trim() ?? '0.00');
+          current?.pointsPossible =
+              double.parse(current.points?.split(" / ")[1].trim() ?? '0.00');
+          current?.pointsEarned =
+              double.parse(current.points?.split(" / ")[0].trim() ?? '0.00');
         }
       }
     }

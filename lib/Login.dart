@@ -12,7 +12,6 @@ class LoginPage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => LoginPageState();
-
 }
 
 class LoginPageState extends State<LoginPage> {
@@ -30,63 +29,64 @@ class LoginPageState extends State<LoginPage> {
         titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
       ),
       body: Center(
-        child: Form(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Column(
-                  children: <Widget>[
-                    Text((() {
-                      if (wrongPass){ return "Incorrect username or password";}
-                      return "";
-                    })(), style: const TextStyle(color: Colors.red),),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'Username',
-                      ),
-                      controller: usernameController,
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                        hintText: 'Password',
-
-                      ),
-                      controller: passwordController,
-                    ),
-                  ]
-                ),
+          child: Form(
+              child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Column(children: <Widget>[
+              Text(
+                (() {
+                  if (wrongPass) {
+                    return "Incorrect username or password";
+                  }
+                  return "";
+                })(),
+                style: const TextStyle(color: Colors.red),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: ElevatedButton(
-                  onPressed: () async {
-                      GradeBook? gradeBookData = await Synergy.login(usernameController.text, passwordController.text);
-
-                      if (gradeBookData == null) {
-                        setState(() {
-                          wrongPass = true;
-                        });
-
-                        return;
-                      }
-
-                      Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => GradeViewPage(gradeBookData: gradeBookData, title: 'Synapse',)
-                          )
-                      );
-                    },
-                  child: const Text('Submit'),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'Username',
                 ),
+                controller: usernameController,
               ),
-            ],
-          )
-        )
-      ),
+              TextFormField(
+                obscureText: true,
+                decoration: const InputDecoration(
+                  hintText: 'Password',
+                ),
+                controller: passwordController,
+              ),
+            ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: ElevatedButton(
+              onPressed: () async {
+                GradeBook? gradeBookData = await Synergy.login(
+                    usernameController.text, passwordController.text);
+
+                if (gradeBookData == null) {
+                  setState(() {
+                    wrongPass = true;
+                  });
+
+                  return;
+                }
+
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => GradeViewPage(
+                          gradeBookData: gradeBookData,
+                          title: 'Synapse',
+                        )));
+              },
+              child: const Text('Submit'),
+            ),
+          ),
+        ],
+      ))),
     );
   }
 }

@@ -14,11 +14,7 @@ class GradeBook {
   @annotation.XmlElement(name: "Courses")
   Courses? courses;
 
-  GradeBook({
-    this.reportingPeriods,
-    this.reportingPeriod,
-    this.courses
-  });
+  GradeBook({this.reportingPeriods, this.reportingPeriod, this.courses});
 
   @override
   String toString() {
@@ -33,9 +29,9 @@ class GradeBook {
       _$GradeBookFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$GradeBookBuildXmlChildren(
         this,
         builder,
@@ -43,9 +39,9 @@ class GradeBook {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$GradeBookBuildXmlElement(
         this,
         builder,
@@ -79,13 +75,11 @@ class GradeBook {
 
 @annotation.XmlRootElement(name: "ReportingPeriods")
 @annotation.XmlSerializable()
-class ReportingPeriods{
+class ReportingPeriods {
   @annotation.XmlElement(name: "ReportPeriod")
   List<ReportPeriod>? reportingPeriods;
 
-  ReportingPeriods({
-    this.reportingPeriods
-  });
+  ReportingPeriods({this.reportingPeriods});
 
   @override
   String toString() {
@@ -96,9 +90,9 @@ class ReportingPeriods{
       _$ReportingPeriodsFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$ReportingPeriodsBuildXmlChildren(
         this,
         builder,
@@ -106,9 +100,9 @@ class ReportingPeriods{
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$ReportingPeriodsBuildXmlElement(
         this,
         builder,
@@ -152,12 +146,7 @@ class ReportPeriod {
   @annotation.XmlAttribute(name: "EndDate")
   String? endDate;
 
-  ReportPeriod({
-    this.index,
-    this.gradePeriod,
-    this.startDate,
-    this.endDate
-  });
+  ReportPeriod({this.index, this.gradePeriod, this.startDate, this.endDate});
 
   @override
   String toString() {
@@ -173,9 +162,9 @@ class ReportPeriod {
       _$ReportPeriodFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$ReportPeriodBuildXmlChildren(
         this,
         builder,
@@ -183,9 +172,9 @@ class ReportPeriod {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$ReportPeriodBuildXmlElement(
         this,
         builder,
@@ -227,11 +216,7 @@ class ReportingPeriod {
   @annotation.XmlAttribute(name: "EndDate")
   String? endDate;
 
-  ReportingPeriod({
-    this.gradePeriod,
-    this.startDate,
-    this.endDate
-  });
+  ReportingPeriod({this.gradePeriod, this.startDate, this.endDate});
 
   @override
   String toString() {
@@ -246,9 +231,9 @@ class ReportingPeriod {
       _$ReportingPeriodFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$ReportingPeriodBuildXmlChildren(
         this,
         builder,
@@ -256,9 +241,9 @@ class ReportingPeriod {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$ReportingPeriodBuildXmlElement(
         this,
         builder,
@@ -296,9 +281,7 @@ class Courses {
   @annotation.XmlElement(name: "Course")
   List<Course>? courses;
 
-  Courses({
-    this.courses
-  });
+  Courses({this.courses});
 
   @override
   String toString() {
@@ -309,9 +292,9 @@ class Courses {
       _$CoursesFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$CoursesBuildXmlChildren(
         this,
         builder,
@@ -319,9 +302,9 @@ class Courses {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$CoursesBuildXmlElement(
         this,
         builder,
@@ -375,17 +358,16 @@ class Course {
   @annotation.XmlElement(name: "Marks")
   Marks? marks;
 
-  Course({
-    this.useRichContent,
-    this.period,
-    this.title,
-    this.room,
-    this.staff,
-    this.staffEMail,
-    this.staffGU,
-    this.highlightPercentageCutOffForProgressBar,
-    this.marks
-  });
+  Course(
+      {this.useRichContent,
+      this.period,
+      this.title,
+      this.room,
+      this.staff,
+      this.staffEMail,
+      this.staffGU,
+      this.highlightPercentageCutOffForProgressBar,
+      this.marks});
 
   @override
   String toString() {
@@ -406,9 +388,9 @@ class Course {
       _$CourseFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$CourseBuildXmlChildren(
         this,
         builder,
@@ -416,9 +398,9 @@ class Course {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$CourseBuildXmlElement(
         this,
         builder,
@@ -469,9 +451,9 @@ class Marks {
       _$MarksFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$MarksBuildXmlChildren(
         this,
         builder,
@@ -479,9 +461,9 @@ class Marks {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$MarksBuildXmlElement(
         this,
         builder,
@@ -527,13 +509,12 @@ class Mark {
   @annotation.XmlElement(name: "Assignments")
   Assignments? assignments;
 
-  Mark({
-    this.markName,
-    this.calculatedScoreString,
-    this.calculatedScoreRaw,
-    this.gradeCalculationSummary,
-    this.assignments
-  });
+  Mark(
+      {this.markName,
+      this.calculatedScoreString,
+      this.calculatedScoreRaw,
+      this.gradeCalculationSummary,
+      this.assignments});
 
   @override
   String toString() {
@@ -549,9 +530,9 @@ class Mark {
       _$MarkFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$MarkBuildXmlChildren(
         this,
         builder,
@@ -559,9 +540,9 @@ class Mark {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$MarkBuildXmlElement(
         this,
         builder,
@@ -614,9 +595,9 @@ class GradeCalculationSummary {
       _$GradeCalculationSummaryFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$GradeCalculationSummaryBuildXmlChildren(
         this,
         builder,
@@ -624,9 +605,9 @@ class GradeCalculationSummary {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$GradeCalculationSummaryBuildXmlElement(
         this,
         builder,
@@ -674,14 +655,13 @@ class AssignmentGradeCalc {
   @annotation.XmlAttribute(name: 'CalculatedMark')
   String? calculatedMark;
 
-  AssignmentGradeCalc({
-    this.type,
-    this.weight,
-    this.points,
-    this.pointsPossible,
-    this.weightedPct,
-    this.calculatedMark
-  });
+  AssignmentGradeCalc(
+      {this.type,
+      this.weight,
+      this.points,
+      this.pointsPossible,
+      this.weightedPct,
+      this.calculatedMark});
 
   @override
   String toString() {
@@ -699,9 +679,9 @@ class AssignmentGradeCalc {
       _$AssignmentGradeCalcFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$AssignmentGradeCalcBuildXmlChildren(
         this,
         builder,
@@ -709,9 +689,9 @@ class AssignmentGradeCalc {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$AssignmentGradeCalcBuildXmlElement(
         this,
         builder,
@@ -749,9 +729,7 @@ class Assignments {
   @annotation.XmlElement(name: 'Assignment')
   List<Assignment>? assignments;
 
-  Assignments({
-    this.assignments
-  });
+  Assignments({this.assignments});
 
   @override
   String toString() {
@@ -762,9 +740,9 @@ class Assignments {
       _$AssignmentsFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$AssignmentsBuildXmlChildren(
         this,
         builder,
@@ -772,9 +750,9 @@ class Assignments {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$AssignmentsBuildXmlElement(
         this,
         builder,
@@ -847,24 +825,22 @@ class Assignment {
   TextEditingController pointsPossibleController = TextEditingController();
   TextEditingController nameController = TextEditingController();
 
-
-  Assignment({
-    this.gradeBookID,
-    this.measure,
-    this.type,
-    this.date,
-    this.dueDate,
-    this.score,
-    this.scoreType,
-    this.points,
-    this.notes,
-    this.teacherID,
-    this.studentID,
-    this.measureDescription,
-    this.hasDropBox,
-    this.dropStartDate,
-    this.dropEndDate
-  });
+  Assignment(
+      {this.gradeBookID,
+      this.measure,
+      this.type,
+      this.date,
+      this.dueDate,
+      this.score,
+      this.scoreType,
+      this.points,
+      this.notes,
+      this.teacherID,
+      this.studentID,
+      this.measureDescription,
+      this.hasDropBox,
+      this.dropStartDate,
+      this.dropEndDate});
 
   @override
   String toString() {
@@ -891,9 +867,9 @@ class Assignment {
       _$AssignmentFromXmlElement(element);
 
   void buildXmlChildren(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$AssignmentBuildXmlChildren(
         this,
         builder,
@@ -901,9 +877,9 @@ class Assignment {
       );
 
   void buildXmlElement(
-      XmlBuilder builder, {
-        Map<String, String> namespaces = const {},
-      }) =>
+    XmlBuilder builder, {
+    Map<String, String> namespaces = const {},
+  }) =>
       _$AssignmentBuildXmlElement(
         this,
         builder,

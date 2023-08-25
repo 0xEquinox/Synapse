@@ -8,15 +8,13 @@ class Synapse extends StatelessWidget {
     return MaterialApp(
       title: 'Synapse',
       theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.green,
-        brightness: Brightness.light
-      ),
-      darkTheme: ThemeData (
           useMaterial3: true,
           colorSchemeSeed: Colors.green,
-          brightness: Brightness.dark
-      ),
+          brightness: Brightness.light),
+      darkTheme: ThemeData(
+          useMaterial3: true,
+          colorSchemeSeed: Colors.green,
+          brightness: Brightness.dark),
       themeMode: ThemeMode.system,
       home: LoginPage(),
     );

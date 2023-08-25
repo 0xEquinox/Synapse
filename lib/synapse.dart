@@ -6,13 +6,13 @@ import 'package:synapse/Serialization/DeserializeXml.dart';
 import 'course.dart';
 
 class GradeViewPage extends StatefulWidget {
-  const GradeViewPage({super.key, required this.title, required this.gradeBookData});
+  const GradeViewPage(
+      {super.key, required this.title, required this.gradeBookData});
   final String title;
   final GradeBook gradeBookData;
 
   @override
   State<GradeViewPage> createState() => _GradeViewPageState();
-
 }
 
 class _GradeViewPageState extends State<GradeViewPage> {
@@ -34,15 +34,14 @@ class _GradeViewPageState extends State<GradeViewPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-        backgroundColor: Colors.green,
-        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
-          iconTheme: const IconThemeData(color: Colors.white)
-      ),
+          title: Text(widget.title),
+          backgroundColor: Colors.green,
+          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
+          iconTheme: const IconThemeData(color: Colors.white)),
       body: Center(
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 8),
-          children:  <Widget> [
+          children: <Widget>[
             for (int index = 0; index < courses.length; index++)
               GestureDetector(
                 child: Card(
@@ -50,17 +49,16 @@ class _GradeViewPageState extends State<GradeViewPage> {
                     title: Text(courses[index].title ?? 'Undefined'),
                     subtitle: Text(courses[index].staff ?? 'Undefined'),
                     trailing: Text(
-                      calculate(courses[index].marks?.marks?[0].calculatedScoreRaw),
-                      style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 18)
-                    ),
+                        calculate(
+                            courses[index].marks?.marks?[0].calculatedScoreRaw),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.normal, fontSize: 18)),
                   ),
                 ),
                 onTap: () => {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => CourseView(courseData: courses[index])
-                    )
-                  )
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          CourseView(courseData: courses[index])))
                 },
               ),
           ],
