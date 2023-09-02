@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:xml_annotation/xml_annotation.dart' as annotation;
 import 'package:xml/xml.dart';
@@ -516,6 +518,14 @@ class Mark {
       this.gradeCalculationSummary,
       this.assignments});
 
+  List<AssignmentGradeCalc> getCategories() {
+    return gradeCalculationSummary?.assignmentGradeCalcs ?? <AssignmentGradeCalc>[];
+  }
+
+  List<Assignment> getAssignments() {
+    return assignments?.assignments ?? <Assignment>[];
+  }
+
   @override
   String toString() {
     return "  Mark {"
@@ -654,6 +664,11 @@ class AssignmentGradeCalc {
   String? weightedPct;
   @annotation.XmlAttribute(name: 'CalculatedMark')
   String? calculatedMark;
+
+  double pointsEarnedDecimal = 0;
+  double pointsPossibleDecimal = 0;
+  double decimalGrade = 0.0;
+  String stringGrade = "";
 
   AssignmentGradeCalc(
       {this.type,

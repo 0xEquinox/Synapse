@@ -79,7 +79,7 @@ class LoginPageState extends State<LoginPage> {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => GradeViewPage(
                           gradeBookData: gradeBookData,
-                          title: 'Synapse',
+                          title: 'Gradebook',
                         )));
               },
               child: const Text('Submit'),

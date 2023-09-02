@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:synapse/synapse.dart';
 
+import 'gradeCalc.dart';
 import 'Serialization/DeserializeXml.dart';
 
 class CourseView extends StatefulWidget {
@@ -24,44 +25,10 @@ class CourseViewState extends State<CourseView> {
     return parsed <= 4 && parsed != 0 ? "$parsed / 4" : "$parsed%";
   }
 
-  void recalculateOverallGrade(Course course) {
-    List<Assignment>? assignments =
-        course.marks?.marks?[0].assignments?.assignments;
-    List<AssignmentGradeCalc>? weights =
-        course.marks?.marks?[0].gradeCalculationSummary?.assignmentGradeCalcs;
-
-    HashMap<String, double> weightTable = HashMap();
-    HashMap<String, double> pointsTable = HashMap();
-    for (int i = 0; i < (weights?.length ?? 0); i++) {
-      String weightName = weights?[i].type ?? "Undefined";
-      double weightPercent = double.parse(weights?[i]
-              .weight
-              ?.substring(0, (weights[i].weight?.length ?? 1) - 1) ??
-          "0.0");
-
-      weightTable.addAll({weightName: weightPercent});
-      pointsTable.addAll({weightName: 0.0});
-    }
-
-    for (int i = 0; i < (assignments?.length ?? 0); i++) {
-      double pointsEarned = assignments?[i].pointsEarned ?? 0;
-      pointsTable[assignments?[i].type ?? "undefined"] =
-          pointsTable[assignments?[i].type ?? "undefined"] ?? 0 + pointsEarned;
-    }
-
-    double totalPoints = 0.0;
-    pointsTable.forEach((key, value) {
-      double weight = (weightTable[key] ?? 1) / 100;
-      totalPoints += value * weight;
-    });
-
-    double newCourseGrade = totalPoints;
-    course.marks?.marks?[0].calculatedScoreRaw = "$newCourseGrade";
-    print(newCourseGrade);
-  }
-
   @override
   Widget build(BuildContext context) {
+    GradeCalculator gradeCalculator = GradeCalculator();
+
     return Scaffold(
         appBar: AppBar(
             title: Text(widget.courseData.title ?? "Undefined"),
@@ -172,7 +139,7 @@ class CourseViewState extends State<CourseView> {
                                       .pointsEarnedController
                                       .text) ??
                                   "0.0");
-                              recalculateOverallGrade(widget.courseData);
+                              gradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? new Mark());
                             }),
                       ),
                       const Text(
@@ -224,7 +191,7 @@ class CourseViewState extends State<CourseView> {
                                       .pointsPossibleController
                                       .text) ??
                                   "0.0");
-                              recalculateOverallGrade(widget.courseData);
+                              gradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? new Mark());
                             }),
                       )
                     ]))

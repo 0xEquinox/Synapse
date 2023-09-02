@@ -37,14 +37,14 @@ class Synergy {
     //   'parent': false,
     //   'webServiceHandleName': 'PXPWebServices',
     //   'methodName': 'Gradebook',
-    //   'paramStr': '<Parms><ChildIntID>0</ChildIntID><ReportPeriod>3</ReportPeriod></Parms>'
+    //   'paramStr': '<Parms><ChildIntID>0</ChildIntID><ReportPeriod>1</ReportPeriod></Parms>'
     // });
     //
     // if (response.data['d'].length < 1000) {
     //   return null;
     // }
 
-    String response = """<?xml version="1.0" encoding="UTF-8"?>
+    String response_offline = """<?xml version="1.0" encoding="UTF-8"?>
                     <Gradebook xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Type="Traditional" ErrorMessage="" HideStandardGraphInd="false" HideMarksColumnElementary="true" HidePointsColumnElementary="false" HidePercentSecondary="false" DisplayStandardsData="true" GBStandardsTabDefault="true">
                        <ReportingPeriods>
                           <ReportPeriod Index="0" GradePeriod="Quarter 1" StartDate="9/1/2022" EndDate="11/7/2022" />
@@ -918,10 +918,11 @@ class Synergy {
                        </Courses>
                     </Gradebook>
 """;
+    // print(response.data['d'].toString().replaceAll('\r\n', ''));
+    // var xml = XmlDocument.parse(response.data['d'].toString().replaceAll('\r\n', ''));
+    var xmlOffline =  XmlDocument.parse(response_offline);
 
-    var xml = XmlDocument.parse(response);
-
-    final gradeBook = GradeBook.fromXmlElement(xml.rootElement);
+    final gradeBook = GradeBook.fromXmlElement(xmlOffline.rootElement);
     final newGradeBook = populateScores(gradeBook);
     return newGradeBook;
   }

@@ -46,13 +46,17 @@ class _GradeViewPageState extends State<GradeViewPage> {
               GestureDetector(
                 child: Card(
                   child: ListTile(
-                    title: Text(courses[index].title ?? 'Undefined'),
+                    title: Text(() {
+                      String title = '';
+                      for (var c in (courses[index].title ?? 'Undefined')) {
+
+                      }
+                      return courses[index].title ?? 'Undefined';
+                    }()),
                     subtitle: Text(courses[index].staff ?? 'Undefined'),
                     trailing: Text(
-                        calculate(
-                            courses[index].marks?.marks?[0].calculatedScoreRaw),
-                        style: const TextStyle(
-                            fontWeight: FontWeight.normal, fontSize: 18)),
+                        calculate(courses[index].marks?.marks?[0].calculatedScoreRaw),
+                        style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 18)),
                   ),
                 ),
                 onTap: () => {
