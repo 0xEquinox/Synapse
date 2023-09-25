@@ -1,0 +1,12 @@
+com.example.synapse.app-jetified-window-1.0.0-beta04-0 /home/will/.gradle/caches/transforms-3/30c9f9e36f76ec2d5a473df3d33e33ff/transformed/jetified-window-1.0.0-beta04/res
+com.example.synapse.app-jetified-window-java-1.0.0-beta04-1 /home/will/.gradle/caches/transforms-3/5f7f04b14475a5177c81c0aebd35a1c0/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.synapse.app-core-1.6.0-2 /home/will/.gradle/caches/transforms-3/9d13f608411ebd1b864ae55bb53a8fcc/transformed/core-1.6.0/res
+com.example.synapse.app-jetified-annotation-experimental-1.1.0-3 /home/will/.gradle/caches/transforms-3/eaa9ca6d8aeab4c8cbd4c273a15e4d4e/transformed/jetified-annotation-experimental-1.1.0/res
+com.example.synapse.app-main-4 /home/will/Code/Flutter/Synapse/android/app/src/main/res
+com.example.synapse.app-profile-5 /home/will/Code/Flutter/Synapse/android/app/src/profile/res
+com.example.synapse.app-pngs-6 /home/will/Code/Flutter/Synapse/build/app/generated/res/pngs/profile
+com.example.synapse.app-resValues-7 /home/will/Code/Flutter/Synapse/build/app/generated/res/resValues/profile
+com.example.synapse.app-rs-8 /home/will/Code/Flutter/Synapse/build/app/generated/res/rs/profile
+com.example.synapse.app-mergeProfileResources-9 /home/will/Code/Flutter/Synapse/build/app/intermediates/incremental/profile/mergeProfileResources/merged.dir
+com.example.synapse.app-mergeProfileResources-10 /home/will/Code/Flutter/Synapse/build/app/intermediates/incremental/profile/mergeProfileResources/stripped.dir
+com.example.synapse.app-merged_res-11 /home/will/Code/Flutter/Synapse/build/app/intermediates/merged_res/profile

@@ -1,0 +1,14 @@
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/CMakeFiles/synapse.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/CMakeFiles/edit_cache.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/CMakeFiles/rebuild_cache.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/CMakeFiles/list_install_components.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/CMakeFiles/install.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/CMakeFiles/install/local.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/CMakeFiles/install/strip.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/flutter/CMakeFiles/flutter_assemble.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/flutter/CMakeFiles/edit_cache.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/flutter/CMakeFiles/rebuild_cache.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/flutter/CMakeFiles/list_install_components.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/flutter/CMakeFiles/install.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/flutter/CMakeFiles/install/local.dir
+/home/will/Code/Flutter/Synapse/build/linux/x64/debug/flutter/CMakeFiles/install/strip.dir

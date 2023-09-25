@@ -349,14 +349,6 @@ class Synergy {
                                          <Resources />
                                          <Standards />
                                       </Assignment>
-                                      <Assignment GradebookID="1126138" Measure="U8: Vietnam War DBQ Outline" Type="HTS3 (Claims and Evidence in Sources)" Date="4/26/2023" DueDate="4/26/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="5/8/2023" DropEndDate="5/8/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
-                                      <Assignment GradebookID="1126129" Measure="U8: Vietnam War DBQ Outline" Type="HTS2 (Sourcing and Situation)" Date="4/26/2023" DueDate="4/26/2023" Score="4" ScoreType="Rubric 0-4 (copy)" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="5/8/2023" DropEndDate="5/8/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
                                       <Assignment GradebookID="1111365" Measure="U8: Cold WAr Discussion" Type="HTS1 (Developments and Processes)" Date="4/17/2023" DueDate="4/17/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="4/17/2023" DropEndDate="4/17/2023">
                                          <Resources />
                                          <Standards />
@@ -377,18 +369,11 @@ class Synergy {
                                          <Resources />
                                          <Standards />
                                       </Assignment>
-                                      <Assignment GradebookID="1108366" Measure="U7: MC Quiz" Type="HTS2 (Sourcing and Situation)" Date="4/6/2023" DueDate="4/6/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="4/6/2023" DropEndDate="4/6/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
                                       <Assignment GradebookID="1108358" Measure="U7: MC Quiz" Type="HTS5 (Making Connections)" Date="4/6/2023" DueDate="4/6/2023" Score="3" ScoreType="Rubric 0-4" Points="3.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="4/6/2023" DropEndDate="4/6/2023">
                                          <Resources />
                                          <Standards />
                                       </Assignment>
-                                      <Assignment GradebookID="1108346" Measure="U7: MC Quiz" Type="HTS3 (Claims and Evidence in Sources)" Date="4/6/2023" DueDate="4/6/2023" Score="3" ScoreType="Rubric 0-4" Points="3.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="4/6/2023" DropEndDate="4/6/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
+                                    
                                       <Assignment GradebookID="1107916" Measure="U7: New Deal Discussion" Type="HTS6 (Argumentation)" Date="4/3/2023" DueDate="4/3/2023" Score="3" ScoreType="Rubric 0-4" Points="3.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="4/6/2023" DropEndDate="4/6/2023">
                                          <Resources />
                                          <Standards />
@@ -413,18 +398,12 @@ class Synergy {
                                          <Resources />
                                          <Standards />
                                       </Assignment>
-                                      <Assignment GradebookID="1107745" Measure="U7: DBQ SOURCING (Imperialism)" Type="HTS2 (Sourcing and Situation)" Date="3/27/2023" DueDate="3/27/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="4/5/2023" DropEndDate="4/5/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
+                     
                                       <Assignment GradebookID="1107705" Measure="U7: DBQ OUTSIDE EVIDENCE (Imperialism)" Type="HTS6 (Argumentation)" Date="3/27/2023" DueDate="3/27/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="4/5/2023" DropEndDate="4/5/2023">
                                          <Resources />
                                          <Standards />
                                       </Assignment>
-                                      <Assignment GradebookID="1107699" Measure="U7: DBQ DOCUMENT EVIDENCE (Imperialism)" Type="HTS3 (Claims and Evidence in Sources)" Date="3/27/2023" DueDate="3/27/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="4/5/2023" DropEndDate="4/5/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
+                                  
                                       <Assignment GradebookID="1107692" Measure="U7: DBQ CONTEXT (Imperialism)" Type="HTS4 (Contextualization)" Date="3/27/2023" DueDate="3/27/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="4/5/2023" DropEndDate="4/5/2023">
                                          <Resources />
                                          <Standards />
@@ -453,10 +432,7 @@ class Synergy {
                                          <Resources />
                                          <Standards />
                                       </Assignment>
-                                      <Assignment GradebookID="1091708" Measure="U6: DBQ SOURCING (Industrialization)" Type="HTS2 (Sourcing and Situation)" Date="2/16/2023" DueDate="3/16/2023" Score="3" ScoreType="Rubric 0-4" Points="3.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="3/19/2023" DropEndDate="3/19/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
+                                  
                                       <Assignment GradebookID="1091690" Measure="U6: DBQ OUTSIDE EVIDENCE (Industrialization)" Type="HTS6 (Argumentation)" Date="2/16/2023" DueDate="3/16/2023" Score="0" ScoreType="Rubric 0-4" Points="0.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="3/19/2023" DropEndDate="3/19/2023">
                                          <Resources />
                                          <Standards />
@@ -485,14 +461,7 @@ class Synergy {
                                          <Resources />
                                          <Standards />
                                       </Assignment>
-                                      <Assignment GradebookID="1078334" Measure="U6: MC Quiz" Type="HTS3 (Claims and Evidence in Sources)" Date="3/2/2023" DueDate="3/2/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="3/2/2023" DropEndDate="3/2/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
-                                      <Assignment GradebookID="1091702" Measure="U6: DBQ DOCUMENT EVIDENCE (Industrialization)" Type="HTS3 (Claims and Evidence in Sources)" Date="2/16/2023" DueDate="2/16/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="3/19/2023" DropEndDate="3/19/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
+                                      
                                       <Assignment GradebookID="1091696" Measure="U6: DBQ CONTEXT (Industrialization)" Type="HTS4 (Contextualization)" Date="2/16/2023" DueDate="2/16/2023" Score="2" ScoreType="Rubric 0-4" Points="2.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="3/19/2023" DropEndDate="3/19/2023">
                                          <Resources />
                                          <Standards />
@@ -505,10 +474,7 @@ class Synergy {
                                          <Resources />
                                          <Standards />
                                       </Assignment>
-                                      <Assignment GradebookID="1071283" Measure="U6: DBQ Paragraph (Chinese Exclusion Act)" Type="HTS3 (Claims and Evidence in Sources)" Date="2/15/2023" DueDate="2/15/2023" Score="3" ScoreType="Rubric 0-4" Points="3.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="2/16/2023" DropEndDate="2/16/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
+                                 
                                       <Assignment GradebookID="1062761" Measure="U6: SAQ (Washington and DuBois)" Type="HTS6 (Argumentation)" Date="2/9/2023" DueDate="2/9/2023" Score="3" ScoreType="Rubric 0-4" Points="3.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="2/9/2023" DropEndDate="2/9/2023">
                                          <Resources />
                                          <Standards />
@@ -517,34 +483,12 @@ class Synergy {
                                          <Resources />
                                          <Standards />
                                       </Assignment>
-                                      <Assignment GradebookID="1058821" Measure="U6: SAQ (Westward Expansion)" Type="HTS3 (Claims and Evidence in Sources)" Date="2/6/2023" DueDate="2/6/2023" Score="3" ScoreType="Rubric 0-4" Points="3.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="2/7/2023" DropEndDate="2/7/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
+                                   
                                       <Assignment GradebookID="1058813" Measure="U6: SAQ (Westward Expansion)" Type="HTS1 (Developments and Processes)" Date="2/6/2023" DueDate="2/6/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="2/7/2023" DropEndDate="2/7/2023">
                                          <Resources />
                                          <Standards />
                                       </Assignment>
-                                      <Assignment GradebookID="1054330" Measure="U6: Significance HAPPY Primary Source Analysis (Chief Joseph)" Type="HTS3 (Claims and Evidence in Sources)" Date="2/2/2023" DueDate="2/2/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="2/5/2023" DropEndDate="2/5/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
-                                      <Assignment GradebookID="1054304" Measure="U6: POV - HAPPY Primary Source Analysis (Chief Joseph)" Type="HTS2 (Sourcing and Situation)" Date="2/2/2023" DueDate="2/2/2023" Score="2" ScoreType="Rubric 0-4" Points="2.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="2/5/2023" DropEndDate="2/5/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
-                                      <Assignment GradebookID="1054293" Measure="U6: Purpose - HAPPY Primary Source Analysis (Chief Joseph)" Type="HTS2 (Sourcing and Situation)" Date="2/2/2023" DueDate="2/2/2023" Score="3" ScoreType="Rubric 0-4" Points="3.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="2/5/2023" DropEndDate="2/5/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
-                                      <Assignment GradebookID="1054287" Measure="U6: Aud. - HAPPY Primary Source Analysis (Chief Joseph)" Type="HTS2 (Sourcing and Situation)" Date="2/2/2023" DueDate="2/2/2023" Score="3" ScoreType="Rubric 0-4" Points="3.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="2/5/2023" DropEndDate="2/5/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
-                                      <Assignment GradebookID="1054281" Measure="U6: Context - HAPPY Primary Source Analysis (Chief Joseph)" Type="HTS2 (Sourcing and Situation)" Date="2/2/2023" DueDate="2/2/2023" Score="4" ScoreType="Rubric 0-4" Points="4.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="2/5/2023" DropEndDate="2/5/2023">
-                                         <Resources />
-                                         <Standards />
-                                      </Assignment>
+           
                                       <Assignment GradebookID="1060613" Measure="U5: LEQ ANALYSIS (Reconstruction)" Type="HTS5 (Making Connections)" Date="1/30/2023" DueDate="1/30/2023" Score="2" ScoreType="Rubric 0-4" Points="2.00 / 4.0000" Notes="" TeacherID="35376" StudentID="35960" MeasureDescription="" HasDropBox="false" DropStartDate="2/8/2023" DropEndDate="2/8/2023">
                                          <Resources />
                                          <Standards />

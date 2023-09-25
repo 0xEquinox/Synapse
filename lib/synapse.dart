@@ -48,9 +48,9 @@ class _GradeViewPageState extends State<GradeViewPage> {
                   child: ListTile(
                     title: Text(() {
                       String title = '';
-                      for (var c in (courses[index].title ?? 'Undefined')) {
-
-                      }
+                      // for (var c in (courses[index].title ?? 'Undefined')) {
+                      //
+                      // }
                       return courses[index].title ?? 'Undefined';
                     }()),
                     subtitle: Text(courses[index].staff ?? 'Undefined'),

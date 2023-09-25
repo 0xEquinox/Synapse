@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:synapse/Serialization/DeserializeXml.dart';
+import 'Serialization/DeserializeXml.dart';
 import 'synergy.dart';
 import 'package:http/http.dart' as http;
 import 'synapse.dart';

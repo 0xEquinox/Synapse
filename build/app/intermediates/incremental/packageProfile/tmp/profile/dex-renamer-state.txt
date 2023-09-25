@@ -1,0 +1,4 @@
+#Thu Sep 21 18:49:41 PDT 2023
+base.0=/home/will/Code/Flutter/Synapse/build/app/intermediates/dex/profile/mergeDexProfile/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

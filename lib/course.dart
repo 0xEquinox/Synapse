@@ -12,8 +12,22 @@ import 'Serialization/DeserializeXml.dart';
 
 class CourseView extends StatefulWidget {
   final Course courseData;
+  late String gradeString;
+  late List<String> categoryListValues;
 
-  const CourseView({super.key, required this.courseData});
+
+  CourseView({super.key, required this.courseData}) {
+    gradeString = GradeCalculator.calculateGradeDisplay(courseData.marks?.marks?[0] ?? Mark());
+
+    List<String> names = [];
+    List<Assignment> assignments = courseData.marks?.marks?[0].getAssignments() ?? [];
+    for (Assignment assignment in assignments) {
+      names.add(assignment.type ?? "Assignment");
+    }
+
+    categoryListValues = names;
+  }
+
 
   @override
   State<StatefulWidget> createState() => CourseViewState();
@@ -23,6 +37,19 @@ class CourseViewState extends State<CourseView> {
   String calculate(String? calculatedScoreRaw) {
     double parsed = double.parse(calculatedScoreRaw!);
     return parsed <= 4 && parsed != 0 ? "$parsed / 4" : "$parsed%";
+  }
+
+  List<String> getCategoryNames() {
+    List<String> names = [];
+
+    List<AssignmentGradeCalc> categories = widget.courseData.marks?.marks?[0].gradeCalculationSummary?.assignmentGradeCalcs ?? [];
+    for (AssignmentGradeCalc category in categories) {
+      if (category.type != "TOTAL") {
+        names.add(category.type ?? "Assignment");
+      }
+    }
+
+    return names;
   }
 
   @override
@@ -47,53 +74,79 @@ class CourseViewState extends State<CourseView> {
                           "Undefined",
                       style: const TextStyle(fontSize: 81),
                     ),
-                    Text(
-                      calculate(widget
-                          .courseData.marks?.marks?[0].calculatedScoreRaw),
+                    Text(widget.gradeString
+                      ,
                       style: const TextStyle(fontSize: 29),
                     )
                   ]))),
           TextButton(
               onPressed: () => {
                     setState(() {
-                      widget
-                          .courseData.marks?.marks?[0].assignments?.assignments
-                          ?.insert(
+                      widget.courseData.marks?.marks?[0].assignments?.assignments?.insert(
                               0,
-                              Assignment(
-                                  measure: "New Assignment",
-                                  points: "0.00 / 0.00"));
+                              Assignment(measure: "New Assignment", points: "0.00 / 0.00"));
+                      if (getCategoryNames().isNotEmpty) {
+                        widget.categoryListValues.insert(0, getCategoryNames()[0]);
+                      } else {
+                        widget.categoryListValues.insert(0, "Assignment");
+                      }
                     })
                   },
               child: const Text("Add an assignment")),
-          for (int i = 0;
-              i <
-                  (widget.courseData.marks?.marks?[0].assignments?.assignments
-                      ?.length as int);
-              i++)
+          for (int i = 0; i < (widget.courseData.marks?.marks?[0].assignments?.assignments?.length ?? 0); i++)
             Card(
               child: Padding(
                 padding: const EdgeInsets.only(
-                    left: 10, right: 10, bottom: 15, top: 10),
+                    left: 0, right: 0, bottom: 0, top: 0),
                 child: Row(
                   children: [
-                    Flexible(
-                      flex: 3,
-                      child: TextField(
-                        controller: (() {
-                          widget.courseData.marks?.marks?[0].assignments
-                              ?.assignments?[i].nameController.text = widget
-                                  .courseData
-                                  .marks
-                                  ?.marks?[0]
-                                  .assignments
-                                  ?.assignments?[i]
-                                  .measure ??
-                              "undefined";
-                          return widget.courseData.marks?.marks?[0].assignments
-                              ?.assignments?[i].nameController;
-                        })(),
-                        decoration: null,
+
+                      Flexible(
+                        flex: 3,
+                        child: ListTile(
+                          title: TextField(
+                            controller: (() {
+                              widget.courseData.marks?.marks?[0].assignments
+                                  ?.assignments?[i].nameController.text = widget
+                                      .courseData
+                                      .marks
+                                      ?.marks?[0]
+                                      .assignments
+                                      ?.assignments?[i]
+                                      .measure ??
+                                  "undefined";
+                              return widget.courseData.marks?.marks?[0].assignments
+                                  ?.assignments?[i].nameController;
+                            })(),
+                          decoration: null,
+                        ),
+                          subtitle: (() {
+                            if (getCategoryNames().isEmpty) {
+                              return const Text("Assignment", style: TextStyle(fontSize: 15, color: Colors.black54));
+                            } else {
+                              return DropdownButton<String>(
+                                icon: const Icon(Icons.arrow_drop_down_rounded),
+                                style: const TextStyle(fontSize: 15, color: Colors.black54),
+                                isDense: true,
+                                underline: DropdownButtonHideUnderline(child: Container()),
+                                value: widget.categoryListValues[i],
+                                items: getCategoryNames().map<
+                                    DropdownMenuItem<String>>((String value) {
+                                  return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value)
+                                  );
+                                }).toList(),
+                                onChanged: (String? value) {
+                                  setState(() {
+                                    widget.categoryListValues[i] = value!; //Update the visual
+                                    widget.courseData.marks?.marks?[0].assignments?.assignments?[i].type = value;
+                                    widget.gradeString = GradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? Mark());
+                                  });
+                                },
+                              );
+                            }
+                          })(),
                       ),
                     ),
                     Flexible(
@@ -123,7 +176,8 @@ class CourseViewState extends State<CourseView> {
                             decoration: null,
                             textAlign: TextAlign.end,
                             style: const TextStyle(fontSize: 15),
-                            onChanged: (text) {
+                            textInputAction: TextInputAction.go,
+                            onSubmitted: (text) {
                               widget
                                   .courseData
                                   .marks
@@ -139,7 +193,9 @@ class CourseViewState extends State<CourseView> {
                                       .pointsEarnedController
                                       .text) ??
                                   "0.0");
-                              gradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? new Mark());
+                              setState(() {
+                                widget.gradeString = GradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? Mark());
+                              });
                             }),
                       ),
                       const Text(
@@ -175,23 +231,12 @@ class CourseViewState extends State<CourseView> {
                             })(),
                             decoration: null,
                             style: const TextStyle(fontSize: 15),
-                            onChanged: (text) {
-                              widget
-                                  .courseData
-                                  .marks
-                                  ?.marks?[0]
-                                  .assignments
-                                  ?.assignments?[i]
-                                  .pointsPossible = double.parse((widget
-                                      .courseData
-                                      .marks
-                                      ?.marks?[0]
-                                      .assignments
-                                      ?.assignments?[i]
-                                      .pointsPossibleController
-                                      .text) ??
-                                  "0.0");
-                              gradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? new Mark());
+                            textInputAction: TextInputAction.go,
+                            onSubmitted: (text) {
+                              widget.courseData.marks?.marks?[0].assignments?.assignments?[i].pointsPossible = double.parse((widget.courseData.marks?.marks?[0].assignments?.assignments?[i].pointsPossibleController.text) ?? "0.0");
+                              setState(() {
+                                widget.gradeString = GradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? Mark());
+                              });
                             }),
                       )
                     ]))
