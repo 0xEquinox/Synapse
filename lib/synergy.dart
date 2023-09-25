@@ -29,20 +29,20 @@ class Synergy {
   }
 
   static Future<GradeBook?> login(username, password) async {
-    // final dio = Dio();
-    // var response = await dio.post('https://wa-bsd405-psv.edupoint.com/Service/PXPCommunication.asmx/ProcessWebServiceRequest', data: {
-    //   'userID': username,
-    //   'password': password,
-    //   'skipLoginLog': true,
-    //   'parent': false,
-    //   'webServiceHandleName': 'PXPWebServices',
-    //   'methodName': 'Gradebook',
-    //   'paramStr': '<Parms><ChildIntID>0</ChildIntID><ReportPeriod>1</ReportPeriod></Parms>'
-    // });
-    //
-    // if (response.data['d'].length < 1000) {
-    //   return null;
-    // }
+    final dio = Dio();
+    var response = await dio.post('https://wa-bsd405-psv.edupoint.com/Service/PXPCommunication.asmx/ProcessWebServiceRequest', data: {
+      'userID': username,
+      'password': password,
+      'skipLoginLog': true,
+      'parent': false,
+      'webServiceHandleName': 'PXPWebServices',
+      'methodName': 'Gradebook',
+      'paramStr': '<Parms><ChildIntID>0</ChildIntID><ReportPeriod>1</ReportPeriod></Parms>'
+    });
+
+    if (response.data['d'].length < 1000) {
+      return null;
+    }
 
     String response_offline = """<?xml version="1.0" encoding="UTF-8"?>
                     <Gradebook xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Type="Traditional" ErrorMessage="" HideStandardGraphInd="false" HideMarksColumnElementary="true" HidePointsColumnElementary="false" HidePercentSecondary="false" DisplayStandardsData="true" GBStandardsTabDefault="true">
@@ -862,11 +862,11 @@ class Synergy {
                        </Courses>
                     </Gradebook>
 """;
-    // print(response.data['d'].toString().replaceAll('\r\n', ''));
-    // var xml = XmlDocument.parse(response.data['d'].toString().replaceAll('\r\n', ''));
+    print(response.data['d'].toString().replaceAll('\r\n', ''));
+    var xml = XmlDocument.parse(response.data['d'].toString().replaceAll('\r\n', ''));
     var xmlOffline =  XmlDocument.parse(response_offline);
 
-    final gradeBook = GradeBook.fromXmlElement(xmlOffline.rootElement);
+    final gradeBook = GradeBook.fromXmlElement(xml.rootElement);
     final newGradeBook = populateScores(gradeBook);
     return newGradeBook;
   }

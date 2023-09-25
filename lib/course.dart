@@ -64,7 +64,20 @@ class CourseViewState extends State<CourseView> {
             iconTheme: const IconThemeData(color: Colors.white)),
         body: ListView(children: <Widget>[
           Padding(
-              padding: const EdgeInsets.only(top: 15),
+            padding: const EdgeInsets.only(top: 5, right: 5),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                  onPressed: (() {
+                    setState(() {
+                      
+                    });
+                  }),
+                  icon: const Icon(Icons.repeat)),
+            ),
+          ),
+          Padding(
+              padding: const EdgeInsets.only(top: 0),
               child: Align(
                   alignment: Alignment.topCenter,
                   child: Column(children: <Widget>[
