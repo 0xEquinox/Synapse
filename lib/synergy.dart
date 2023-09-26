@@ -5,6 +5,8 @@ import 'Serialization/DeserializeXml.dart';
 import 'package:xml/xml.dart';
 import 'dart:io';
 
+late XmlDocument xmlBackup;
+
 class Synergy {
   static GradeBook populateScores(GradeBook gradebook) {
     for (int i = 0; i < (gradebook.courses?.courses?.length ?? 0); i++) {
@@ -863,7 +865,11 @@ class Synergy {
                     </Gradebook>
 """;
     print(response.data['d'].toString().replaceAll('\r\n', ''));
+
     var xml = XmlDocument.parse(response.data['d'].toString().replaceAll('\r\n', ''));
+
+    xmlBackup = xml;
+
     var xmlOffline =  XmlDocument.parse(response_offline);
 
     final gradeBook = GradeBook.fromXmlElement(xml.rootElement);

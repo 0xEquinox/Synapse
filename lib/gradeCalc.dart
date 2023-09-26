@@ -53,6 +53,23 @@ class GradeCalculator {
     }
   }
 
+  //Calculate the letter grade
+  static String calculateLetterGrade(double grade) {
+    if (grade >= 90) {
+      return 'A';
+    } else if (grade >= 80) {
+      return 'B';
+    } else if (grade >= 70) {
+      return 'C';
+    } else if (grade >= 60) {
+      return 'D';
+    } else if (grade < 60) {
+      return 'F';
+    } else {
+      return 'N/A';
+    }
+  }
+
   /// calculate grade
   /// any category out of 0 points are not counted
   /// if a category is all extra credit and is 5/0, it will also be not counted

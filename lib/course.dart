@@ -6,18 +6,23 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:synapse/synapse.dart';
+import 'package:synapse/synergy.dart';
+import 'Serialization/DeserializeXml.dart';
+import 'package:xml/xml.dart';
 
 import 'gradeCalc.dart';
 import 'Serialization/DeserializeXml.dart';
 
 class CourseView extends StatefulWidget {
-  final Course courseData;
+  Course courseData;
   late String gradeString;
   late List<String> categoryListValues;
+  late String gradeLetterString;
 
 
   CourseView({super.key, required this.courseData}) {
     gradeString = GradeCalculator.calculateGradeDisplay(courseData.marks?.marks?[0] ?? Mark());
+    gradeLetterString = GradeCalculator.calculateLetterGrade(double.parse(gradeString.substring(0, gradeString.length - 1)));
 
     List<String> names = [];
     List<Assignment> assignments = courseData.marks?.marks?[0].getAssignments() ?? [];
@@ -70,7 +75,19 @@ class CourseViewState extends State<CourseView> {
               child: IconButton(
                   onPressed: (() {
                     setState(() {
-                      
+                      final gradeBook = GradeBook.fromXmlElement(xmlBackup.rootElement);
+                      Synergy.populateScores(gradeBook);
+                      List<Course> courses = gradeBook.courses?.courses ?? [];
+
+                      //Find this course data
+                      for (Course course in courses) {
+                        if (course.title == widget.courseData.title) {
+                          widget.courseData = course;
+                          widget.gradeString = GradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? Mark());
+                          widget.gradeLetterString = GradeCalculator.calculateLetterGrade(double.parse(widget.gradeString.substring(0, widget.gradeString.length - 1)));
+                          break;
+                        }
+                      }
                     });
                   }),
                   icon: const Icon(Icons.repeat)),
@@ -82,9 +99,7 @@ class CourseViewState extends State<CourseView> {
                   alignment: Alignment.topCenter,
                   child: Column(children: <Widget>[
                     Text(
-                      widget.courseData.marks?.marks?[0]
-                              .calculatedScoreString ??
-                          "Undefined",
+                      widget.gradeLetterString ,
                       style: const TextStyle(fontSize: 81),
                     ),
                     Text(widget.gradeString
@@ -155,6 +170,7 @@ class CourseViewState extends State<CourseView> {
                                     widget.categoryListValues[i] = value!; //Update the visual
                                     widget.courseData.marks?.marks?[0].assignments?.assignments?[i].type = value;
                                     widget.gradeString = GradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? Mark());
+                                    widget.gradeLetterString =  GradeCalculator.calculateLetterGrade(double.parse(widget.gradeString.substring(0, widget.gradeString.length - 1)));
                                   });
                                 },
                               );
@@ -208,6 +224,7 @@ class CourseViewState extends State<CourseView> {
                                   "0.0");
                               setState(() {
                                 widget.gradeString = GradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? Mark());
+                                widget.gradeLetterString = GradeCalculator.calculateLetterGrade(double.parse(widget.gradeString.substring(0, widget.gradeString.length - 1)));
                               });
                             }),
                       ),
@@ -249,6 +266,7 @@ class CourseViewState extends State<CourseView> {
                               widget.courseData.marks?.marks?[0].assignments?.assignments?[i].pointsPossible = double.parse((widget.courseData.marks?.marks?[0].assignments?.assignments?[i].pointsPossibleController.text) ?? "0.0");
                               setState(() {
                                 widget.gradeString = GradeCalculator.calculateGradeDisplay(widget.courseData.marks?.marks?[0] ?? Mark());
+                                widget.gradeLetterString = GradeCalculator.calculateLetterGrade(double.parse(widget.gradeString.substring(0, widget.gradeString.length - 1)));
                               });
                             }),
                       )
