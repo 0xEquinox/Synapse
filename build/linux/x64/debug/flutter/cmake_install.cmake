@@ -1,8 +1,8 @@
-# Install script for directory: /home/will/Code/Flutter/Synapse/linux/flutter
+# Install script for directory: /home/will/Code/Synapse/linux/flutter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle")
+  set(CMAKE_INSTALL_PREFIX "/home/will/Code/Synapse/build/linux/x64/debug/bundle")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,8 +37,8 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
+# Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/llvm-objdump")
 endif()
 

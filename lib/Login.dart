@@ -9,7 +9,9 @@ import 'package:http/http.dart' as http;
 import 'synapse.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({super.key, required this.isDarkMode, required this.toggleTheme});
+  final bool isDarkMode;
+  final Function(bool) toggleTheme;
 
   @override
   State<StatefulWidget> createState() => LoginPageState();
@@ -28,6 +30,15 @@ class LoginPageState extends State<LoginPage> {
         title: const Text("Login"),
         backgroundColor: Colors.green,
         titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
+        actions: [
+          // Dark mode toggle button
+          IconButton(
+            icon: Icon(widget.isDarkMode ? Icons.light_mode : Icons.dark_mode),
+            onPressed: () {
+              widget.toggleTheme(!widget.isDarkMode);
+            },
+          ),
+        ],
       ),
       body: Center(
           child: Form(
@@ -81,6 +92,8 @@ class LoginPageState extends State<LoginPage> {
                     builder: (context) => GradeViewPage(
                           gradeBookData: gradeBookData,
                           title: 'Gradebook',
+                          isDarkMode: widget.isDarkMode,
+                          toggleTheme: widget.toggleTheme
                         )));
               },
               child: const Text('Submit'),

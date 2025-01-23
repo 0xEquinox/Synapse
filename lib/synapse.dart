@@ -7,9 +7,11 @@ import 'course.dart';
 
 class GradeViewPage extends StatefulWidget {
   const GradeViewPage(
-      {super.key, required this.title, required this.gradeBookData});
+      {super.key, required this.title, required this.gradeBookData, required this.isDarkMode, required this.toggleTheme});
   final String title;
   final GradeBook gradeBookData;
+  final bool isDarkMode;
+  final Function(bool) toggleTheme;
 
   @override
   State<GradeViewPage> createState() => _GradeViewPageState();
@@ -37,7 +39,17 @@ class _GradeViewPageState extends State<GradeViewPage> {
           title: Text(widget.title),
           backgroundColor: Colors.green,
           titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
-          iconTheme: const IconThemeData(color: Colors.white)),
+          iconTheme: const IconThemeData(color: Colors.white),
+          actions: [
+            // Dark mode toggle button
+            IconButton(
+              icon: Icon(widget.isDarkMode ? Icons.light_mode : Icons.dark_mode),
+              onPressed: () {
+                widget.toggleTheme(!widget.isDarkMode);
+              },
+            ),
+          ],
+      ),
       body: Center(
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 8),
@@ -62,7 +74,7 @@ class _GradeViewPageState extends State<GradeViewPage> {
                 onTap: () => {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) =>
-                          CourseView(courseData: courses[index])))
+                          CourseView(courseData: courses[index], isDarkMode: widget.isDarkMode, toggleTheme: widget.toggleTheme)))
                 },
               ),
           ],

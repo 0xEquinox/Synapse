@@ -1,8 +1,8 @@
-# Install script for directory: /home/will/Code/Flutter/Synapse/linux
+# Install script for directory: /home/will/Code/Synapse/linux
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle")
+  set(CMAKE_INSTALL_PREFIX "/home/will/Code/Synapse/build/linux/x64/debug/bundle")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,100 +37,121 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
+# Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/llvm-objdump")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   
-  file(REMOVE_RECURSE "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/")
+  file(REMOVE_RECURSE "/home/will/Code/Synapse/build/linux/x64/debug/bundle/")
   
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/synapse" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/synapse")
+  if(EXISTS "$ENV{DESTDIR}/home/will/Code/Synapse/build/linux/x64/debug/bundle/synapse" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/will/Code/Synapse/build/linux/x64/debug/bundle/synapse")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/synapse"
+         FILE "$ENV{DESTDIR}/home/will/Code/Synapse/build/linux/x64/debug/bundle/synapse"
          RPATH "$ORIGIN/lib")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/synapse")
+   "/home/will/Code/Synapse/build/linux/x64/debug/bundle/synapse")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle" TYPE EXECUTABLE FILES "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/intermediates_do_not_run/synapse")
-  if(EXISTS "$ENV{DESTDIR}/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/synapse" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/synapse")
+  file(INSTALL DESTINATION "/home/will/Code/Synapse/build/linux/x64/debug/bundle" TYPE EXECUTABLE FILES "/home/will/Code/Synapse/build/linux/x64/debug/intermediates_do_not_run/synapse")
+  if(EXISTS "$ENV{DESTDIR}/home/will/Code/Synapse/build/linux/x64/debug/bundle/synapse" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/will/Code/Synapse/build/linux/x64/debug/bundle/synapse")
     file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/synapse"
-         OLD_RPATH "/home/will/Code/Flutter/Synapse/linux/flutter/ephemeral:"
+         FILE "$ENV{DESTDIR}/home/will/Code/Synapse/build/linux/x64/debug/bundle/synapse"
+         OLD_RPATH "/home/will/Code/Synapse/linux/flutter/ephemeral:"
          NEW_RPATH "$ORIGIN/lib")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/synapse")
+      execute_process(COMMAND "/usr/bin/llvm-strip" "$ENV{DESTDIR}/home/will/Code/Synapse/build/linux/x64/debug/bundle/synapse")
     endif()
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/data/icudtl.dat")
+   "/home/will/Code/Synapse/build/linux/x64/debug/bundle/data/icudtl.dat")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/data" TYPE FILE FILES "/home/will/Code/Flutter/Synapse/linux/flutter/ephemeral/icudtl.dat")
+  file(INSTALL DESTINATION "/home/will/Code/Synapse/build/linux/x64/debug/bundle/data" TYPE FILE FILES "/home/will/Code/Synapse/linux/flutter/ephemeral/icudtl.dat")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so")
+   "/home/will/Code/Synapse/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/lib" TYPE FILE FILES "/home/will/Code/Flutter/Synapse/linux/flutter/ephemeral/libflutter_linux_gtk.so")
+  file(INSTALL DESTINATION "/home/will/Code/Synapse/build/linux/x64/debug/bundle/lib" TYPE FILE FILES "/home/will/Code/Synapse/linux/flutter/ephemeral/libflutter_linux_gtk.so")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/will/Code/Synapse/build/linux/x64/debug/bundle/lib/")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/will/Code/Synapse/build/linux/x64/debug/bundle/lib" TYPE DIRECTORY FILES "/home/will/Code/Synapse/build/native_assets/linux/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   
-  file(REMOVE_RECURSE "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/data/flutter_assets")
+  file(REMOVE_RECURSE "/home/will/Code/Synapse/build/linux/x64/debug/bundle/data/flutter_assets")
   
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Runtime" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/data/flutter_assets")
+   "/home/will/Code/Synapse/build/linux/x64/debug/bundle/data/flutter_assets")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/bundle/data" TYPE DIRECTORY FILES "/home/will/Code/Flutter/Synapse/build//flutter_assets")
+  file(INSTALL DESTINATION "/home/will/Code/Synapse/build/linux/x64/debug/bundle/data" TYPE DIRECTORY FILES "/home/will/Code/Synapse/build//flutter_assets")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/will/Code/Flutter/Synapse/build/linux/x64/debug/flutter/cmake_install.cmake")
+  include("/home/will/Code/Synapse/build/linux/x64/debug/flutter/cmake_install.cmake")
+  include("/home/will/Code/Synapse/build/linux/x64/debug/runner/cmake_install.cmake")
 
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
-  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
+  if(CMAKE_INSTALL_COMPONENT MATCHES "^[a-zA-Z0-9_.+-]+$")
+    set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
+  else()
+    string(MD5 CMAKE_INST_COMP_HASH "${CMAKE_INSTALL_COMPONENT}")
+    set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INST_COMP_HASH}.txt")
+    unset(CMAKE_INST_COMP_HASH)
+  endif()
 else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/will/Code/Flutter/Synapse/build/linux/x64/debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/will/Code/Synapse/build/linux/x64/debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
+endif()

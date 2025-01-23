@@ -19,10 +19,19 @@ class Synergy {
         Assignment? current = gradebook
             .courses?.courses?[i].marks?.marks?[0].assignments?.assignments?[j];
         if (current?.points?.contains(" / ") ?? true) {
-          current?.pointsPossible =
-              double.parse(current.points?.split(" / ")[1].trim() ?? '0.00');
-          current?.pointsEarned =
-              double.parse(current.points?.split(" / ")[0].trim() ?? '0.00');
+          try {
+            current?.pointsPossible =
+                double.parse(current.points?.split(" / ")[1].trim() ?? '0.00');
+          } catch (e) {
+            current?.pointsPossible = 0.00;
+          }
+
+          try {
+            current?.pointsEarned =
+                double.parse(current.points?.split(" / ")[0].trim() ?? '0.00');
+          } catch (e) {
+            current?.pointsEarned = 0.00;
+          }
         }
       }
     }

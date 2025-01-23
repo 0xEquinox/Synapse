@@ -18,9 +18,10 @@ class CourseView extends StatefulWidget {
   late String gradeString;
   late List<String> categoryListValues;
   late String gradeLetterString;
+  final bool isDarkMode;
+  final Function(bool) toggleTheme;
 
-
-  CourseView({super.key, required this.courseData}) {
+  CourseView({super.key, required this.courseData, required this.isDarkMode, required this.toggleTheme}) {
     gradeString = GradeCalculator.calculateGradeDisplay(courseData.marks?.marks?[0] ?? Mark());
     gradeLetterString = GradeCalculator.calculateLetterGrade(double.parse(gradeString.substring(0, gradeString.length - 1)));
 
@@ -66,7 +67,8 @@ class CourseViewState extends State<CourseView> {
             title: Text(widget.courseData.title ?? "Undefined"),
             backgroundColor: Colors.green,
             titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
-            iconTheme: const IconThemeData(color: Colors.white)),
+            iconTheme: const IconThemeData(color: Colors.white),
+        ),
         body: ListView(children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(top: 5, right: 5),
@@ -154,7 +156,10 @@ class CourseViewState extends State<CourseView> {
                             } else {
                               return DropdownButton<String>(
                                 icon: const Icon(Icons.arrow_drop_down_rounded),
-                                style: const TextStyle(fontSize: 15, color: Colors.black54),
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: widget.isDarkMode ? Colors.white70 : Colors.black54
+                                ),
                                 isDense: true,
                                 underline: DropdownButtonHideUnderline(child: Container()),
                                 value: widget.categoryListValues[i],
